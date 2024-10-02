@@ -1,24 +1,27 @@
 package com.example.lab_4;
 
-import android.annotation.SuppressLint;
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.GestureDetector;
 import android.view.MotionEvent;
 
 import androidx.activity.EdgeToEdge;
-import androidx.annotation.NonNull;
-import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
+
+import android.view.View;
+import android.widget.Button;
 import android.widget.TextView;
+
 
 
 public class MainActivity extends AppCompatActivity implements GestureDetector.OnGestureListener{
 
     private TextView gestureText;
     private TextView gestureText2;
+    private Button buttonNext;
     private GestureDetector gestureDetector;
 
     @Override
@@ -30,6 +33,17 @@ public class MainActivity extends AppCompatActivity implements GestureDetector.O
         gestureText = findViewById(R.id.gesture_text);
         gestureText2 = findViewById(R.id.gesture_text2);
         gestureDetector = new GestureDetector(this, this);
+
+        buttonNext = findViewById(R.id.button_next);
+        buttonNext.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(MainActivity.this, MainActivity2.class);
+                startActivity(intent);
+            }
+        });
+
+
 
         ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main), (v, insets) -> {
             Insets systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars());
@@ -77,9 +91,4 @@ public class MainActivity extends AppCompatActivity implements GestureDetector.O
         return false;
     }
 
-//    @Override
-//    public boolean onDoubleTap(MotionEvent event) {
-//        gestureText.setText("пользователь использовал двойное нажатие");
-//        return false;
-//    }
 }

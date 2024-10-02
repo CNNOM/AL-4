@@ -7,4 +7,37 @@
     android:layout_height="match_parent"
     tools:context=".MainActivity2">
 
+    <Button
+        android:id="@+id/button_next"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_marginStart="56dp"
+        android:layout_marginTop="112dp"
+        android:text="Перейти на следующую страницу"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/gesture_text"
+        android:layout_width="323dp"
+        android:layout_height="42dp"
+        android:layout_centerInParent="true"
+        android:layout_marginStart="56dp"
+        android:layout_marginTop="204dp"
+        android:textSize="24sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/gesture_text2"
+        android:layout_width="324dp"
+        android:layout_height="45dp"
+        android:layout_centerInParent="true"
+        android:layout_marginStart="56dp"
+        android:layout_marginTop="268dp"
+        android:textSize="24sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>
